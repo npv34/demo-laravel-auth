@@ -22,4 +22,11 @@ class UserController extends Controller
         $users = User::all();
         return view('users.list', compact('users'));
     }
+
+    public function destroy($id) {
+        $user = User::findOrFail($id);
+        $user->delete();
+
+        return redirect()->route('')
+    }
 }
