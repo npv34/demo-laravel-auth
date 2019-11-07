@@ -29,4 +29,3 @@ Route::middleware('auth')->group(function (){
 
 Route::get('login','LoginController@showFormLogin')->name('login');
 Route::post('login','LoginController@login')->name('submit-login');
-Route::get('create','LoginController@create')->name('create');
