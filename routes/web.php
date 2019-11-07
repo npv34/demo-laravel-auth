@@ -23,6 +23,7 @@ Route::middleware('auth')->group(function (){
         Route::get('/','UserController@index')->name('user.index');
         Route::get('/create','UserController@create')->name('user.create');
         Route::get('/{id}/delete','UserController@destroy')->name('user.destroy');
+        Route::post('store','UserController@store')->name('user.store');
     });
 
 });
