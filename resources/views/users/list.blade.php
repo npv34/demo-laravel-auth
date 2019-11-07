@@ -12,7 +12,7 @@
         <td>{{ $user->email }}</td>
         <td>
             @can('crud-user')
-            <a href="">Delete</a>
+            <a href="{{  route('user.destroy', $user->id) }}">Delete</a>
             @endcan
         </td>
     </tr>

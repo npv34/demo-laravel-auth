@@ -18,9 +18,12 @@ Route::middleware('auth')->group(function (){
     Route::get('/', function () {
         return view('welcome');
     });
-    Route::get('users','UserController@index')->name('user.index');
 
-    Route::get('users/create','UserController@create')->name('user.create');
+    Route::prefix('users')->group(function (){
+        Route::get('/','UserController@index')->name('user.index');
+        Route::get('/create','UserController@create')->name('user.create');
+        Route::get('/{id}/delete','UserController@destroy')->name('user.destroy');
+    });
 
 });
 
