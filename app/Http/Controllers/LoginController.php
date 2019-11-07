@@ -25,4 +25,9 @@ class LoginController extends Controller
 
         return back();
     }
+
+    function create()
+    {
+        return view('users/create');
+    }
 }
